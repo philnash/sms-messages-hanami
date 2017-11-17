@@ -1,33 +1,44 @@
 # Messages
 
-Welcome to your new Hanami project!
+An example of a Hanami app to receive and respond to incoming SMS messages from [Twilio](https://www.twilio.com).
 
 ## Setup
 
-How to run tests:
+You'll need a Twilio account, [sign up for a free account here](http://twilio.com/try-twilio), and a phone number that can receive SMS messages.
 
-```
-% bundle exec rake
-```
+To tunnel internet traffic to your local development server [I recommend ngrok](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
 
-How to run the development console:
+### Getting started
 
-```
-% bundle exec hanami console
-```
+Clone this repository and install the dependencies:
 
-How to run the development server:
-
-```
-% bundle exec hanami server
+```bash
+git clone https://github.com/philnash/sms-messages-hanami.git
+cd sms-messages-hanami
+bundle install
 ```
 
-How to prepare (create and migrate) DB for `development` and `test` environments:
+Run the tests:
 
 ```
-% bundle exec hanami db prepare
-
-% HANAMI_ENV=test bundle exec hanami db prepare
+bundle exec rake spec
 ```
 
-Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://hanamirb.org/docs/1.0.0/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
+Run the development server:
+
+```
+bundle exec hanami server
+```
+
+Run ngrok:
+
+```
+ngrok http 2300
+```
+
+Take the ngrok URL and add the path `/webhooks/sms`. Enter that URL as the messaging webhook for your [Twilio number](https://www.twilio.com/console/phone-numbers/incoming).
+
+Send a message to your number and your application will respond with "Hello from Hanami!".
+
+
+Explore Hanami [guides](http://hanamirb.org/guides/), [API docs](http://docs.hanamirb.org/docs/1.1.0/), or jump in [chat](http://chat.hanamirb.org) for help. Enjoy! 🌸
