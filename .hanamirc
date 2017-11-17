@@ -1,0 +1,3 @@
+project=messages
+test=minitest
+template=erb
