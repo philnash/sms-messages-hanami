@@ -1,6 +1,6 @@
 # Messages
 
-An example of a Hanami app to receive and respond to incoming SMS messages from [Twilio](https://www.twilio.com).
+An example of a Hanami app to receive and respond to incoming SMS messages from [Twilio](https://www.twilio.com). You can read about how this was created and the decisions took in the blog post [How to receive and respond to text messages in Ruby with Hanami and Twilio](https://www.twilio.com/blog/2017/11/how-to-receive-and-respond-to-text-messages-in-ruby-with-hanami-and-twilio.html).
 
 ## Setup
 
